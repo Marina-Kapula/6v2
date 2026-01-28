@@ -9,11 +9,11 @@ const AnecdoteList = () => {
     return anecdotes.filter(a => a.content.toLowerCase().includes(lower))
   })
 
-  const handleVote = (anecdote) => {
-    dispatch(voteForAnecdote(anecdote.id))
-    dispatch(setNotification(`You voted '${anecdote.content}'`))
-    setTimeout(() => dispatch(clearNotification()), 5500)
-  }
+const handleVote = (anecdote) => {
+  dispatch(voteForAnecdote(anecdote.id))
+  dispatch(setNotification(`You voted '${anecdote.content}'`, 5))
+}
+
 
   return (
     <div>
